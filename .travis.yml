@@ -10,6 +10,7 @@ before_install:
 - sudo apt-get -y update
 - sudo apt-get -y upgrade lxc-docker
 - docker build -t wkoszek/docker_edu .
+- docker images
 - docker run -d -p 80:80 wkoszek/docker_edu
 - docker ps -a
 - docker run wkoszek/docker_edu /bin/sh -c "uptime; uname -a"
