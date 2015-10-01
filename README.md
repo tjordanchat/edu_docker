@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/wkoszek/docker_edu.svg?branch=master)](https://travis-ci.org/wkoszek/docker_edu)
 
+Example, empty Docker image integrated with Travis Ci. It installs NGinx,
+starts it and makes sure it starts OK.
+
 Initially building Docker on Travis was causing me trouble, and this
 repository is a result of bootstrapping effort. At the moment of building
 (`2015-09-30`) it had to get `1.7.1` version of Docker. Otherwise Travis's
