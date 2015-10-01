@@ -17,4 +17,4 @@ before_install:
 
 script:
 - docker ps -a
-- lynx --dump localhost:80
+- curl -v http://localhost:80
