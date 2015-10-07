@@ -15,10 +15,7 @@ IPTables would be unhappy.
 Click at the Travis badge to see the build process. To reproduce in your
 repo fork the project in GitHub, and then you'll have to do:
 
-	travis enable
-	travis env set DOCKER_EMAIL me@example.com
-	travis env set DOCKER_USERNAME myusername
-	travis env set DOCKER_PASSWORD secretsecret
+	./travis_setup.sh
 
 The values will get added to your Travis repo configuration, and will be
 hidden from the public. Your logs won't show them.
