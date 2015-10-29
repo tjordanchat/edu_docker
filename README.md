@@ -19,3 +19,8 @@ repo fork the project in GitHub, and then you'll have to do:
 
 The values will get added to your Travis repo configuration, and will be
 hidden from the public. Your logs won't show them.
+
+# Author
+
+- Wojciech Adam Koszek, [wojciech@koszek.com](mailto:wojciech@koszek.com)
+- [http://www.koszek.com](http://www.koszek.com)
