@@ -1,6 +1,6 @@
 # Docker build on Travis
 
-[![Build Status](https://travis-ci.org/tjordanchat/docker_edu.svg?branch=master)](https://travis-ci.org/tjordanchat/docker_edu)
+[![Travis CI](https://img.shields.io/travis/tjordanchat/docker_edu.svg?style=flat)](https://travis-ci.org/tjordanchat/docker_edu)
 
 Example, empty Docker image integrated with Travis Ci. It installs NGinx,
 starts it and makes sure it starts OK.
