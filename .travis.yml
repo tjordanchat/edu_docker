@@ -8,13 +8,13 @@ services:
 - docker
 
 before_install:
-- docker build -t wkoszek/docker_edu .
+- docker build -t tjordanchat/docker_edu .
 - docker images
-- docker run -d -p 80:80 wkoszek/docker_edu
+- docker run -d -p 80:80 tjordanchat/docker_edu
 - docker ps -a
-- docker run wkoszek/docker_edu /bin/sh -c "uptime; uname -a"
+- docker run tjordanchat/docker_edu /bin/sh -c "uptime; uname -a"
 - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-- docker push wkoszek/docker_edu
+- docker push tjordanchat/docker_edu
 
 script:
 - docker ps -a
