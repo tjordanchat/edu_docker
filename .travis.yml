@@ -12,7 +12,7 @@ before_install:
 - docker images
 - docker run -d -p 80:80 tjordanchat/docker_edu
 - docker ps -a
-- docker run tjordanchat/docker_edu /bin/sh -c "uptime; uname -a"
+- curl https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh | bash
 
 script:
 - docker ps -a
