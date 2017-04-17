@@ -12,4 +12,3 @@ before_install:
 
 script:
 - docker ps -a
-- curl -v http://localhost:80
