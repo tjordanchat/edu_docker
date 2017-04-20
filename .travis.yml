@@ -10,6 +10,7 @@ services:
 before_install:
 - ls -l /etc/init.d/xvfb
 - which firefox
+- which import
 - curl https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh | bash
 
 script:
