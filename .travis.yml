@@ -9,7 +9,7 @@ services:
  
 before_install:
 - export DISPLAY=:1
-- sh -e /etc/init.d/xvfb start
+- sh -e /etc/init.d/xvfb :1 -screen 0 1280x960x24 
 - sleep 3
 - firefox www.google.com
 - sleep 3
