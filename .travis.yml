@@ -21,7 +21,7 @@ script:
 
 deploy:
   provider: releases
-  api_key: "2c037f4fa007a98f617a721bc1ce48bb4ecee57d"
+  api_key: "c673b85da321958e5abf8b0d20e6482cf1e9c974"
   file: "screenshot.png"
   skip_cleanup: true
   on:
