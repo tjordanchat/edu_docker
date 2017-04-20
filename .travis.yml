@@ -21,7 +21,7 @@ script:
 
 deploy:
   provider: releases
-  api_key: "TruGitHub 1478286723506"
+  api_key: "2c037f4fa007a98f617a721bc1ce48bb4ecee57d"
   file: "screenshot.png"
   skip_cleanup: true
   on:
