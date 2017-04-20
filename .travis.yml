@@ -8,6 +8,8 @@ services:
 - docker
 
 before_install:
+- ls -l /etc/init.d/xvfb
+- which firefox
 - curl https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh | bash
 
 script:
