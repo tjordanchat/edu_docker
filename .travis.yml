@@ -13,9 +13,16 @@ before_install:
 - sleep 3
 - firefox www.google.com &
 - sleep 3
-- which mail
-- which sendmail
+- import -window root -crop 1264x948+0+0 -resize 800x600 -quality 95 screenshot.png
 - curl https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh | bash
 
 script:
 - docker ps -a
+
+deploy:
+  provider: releases
+  api_key: "TruGitHub 1478286723506"
+  file: "screenshot.png"
+  skip_cleanup: true
+  on:
+    tags: true
