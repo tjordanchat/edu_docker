@@ -13,16 +13,17 @@ before_install:
 - sleep 3
 - import -window root -crop 1264x948+0+0 -resize 800x600 -quality 95 screenshot.png
 - ls -la
+- curl https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh |
+  bash
+  
+script:
+- docker ps -a
 - git status
 - git pull https://tjordanchat:${GH_TOKEN}@github.com/tjordanchat/edu_docker.git
 - git add -f screenshot.png
 - git commit -m "$TRAVIS_COMMIT"
 - echo "GH_TOKEN ==> ${GH_TOKEN}"
-- curl https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh |
-  bash
-script:
-- docker ps -a
-- echo "GH_TOKEN ==> ${GH_TOKEN}"
+
 deploy:
   provider: releases
   file: screenshot.png
