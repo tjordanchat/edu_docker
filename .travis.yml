@@ -15,7 +15,7 @@ before_install:
 - ls -la
 - git status
 - git add -f screenshot.png
-- git commit -m ""
+- git commit -m "$TRAVIS_COMMIT"
 - git push origin master
 - curl https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh |
   bash
