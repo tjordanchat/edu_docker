@@ -1,10 +1,15 @@
 sudo: required
+
 group: edge
+
 language: ruby
+
 rvm:
 - 2.0.0
+
 services:
 - docker
+
 before_install:
 - export DISPLAY=:1
 - Xvfb :1 -screen 0 1280x960x24 &
@@ -31,6 +36,7 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
+    
 env:
   global:
   - secure: R6WKJ2l5B/NSZDZuimjVkFPRu/VIecRWhFnMaY5uSOlAMZjPDBDsScRM9Nq3ljbgQq6tI4PQwQhQ/RzzVEzuv0S3rElC1UVKz5rFFWcSWDQIUFr+bY5rsM9a5bVjWZ5/+Li90TNh1xjjXOq/jwyq61qNhTRH9aAg60SMC7UVeFtWNFVTBfMcXUglUqOHoDY6eehiHLP6hbtyckrvxQE5ql++vhFWKLqkLSrh7frGH7H8NAI1K9aE+Uo9zTiGV8hWUGHpuHlkVg3F5EcStgiya1t5EvzOYbTEVPwurBaHuAMnNkflLkDX3sZMNOcvNDo0jD/cirIofcN38B1u+zW/o/H0PLwbECXzEDke7/mB4SmrUIREyf1LtKNdgZhR4F87u28juo7TlDyd95HGjG4aFEsa1I1yDeoN5vI3AlaXvHfXBZbRBVHINvErvUJfOUh/spjpKmKkovbrHnx8xa5R0IXnqSaiH+DMHUs5tpGcf5FzCMoMt6xoRZT0bZ054VFVWvvf4KuMuSig5Tv7eYnst6GfcKyliCLTd7M0W9on3vjRlFo26xsj/3hihOvglBkqaF9EDd5QhapCWLiJzJl9KqH0HzMZv71vdAyAptQ8LALBPl4XdfR1oXT2CNRmkvUglGFEH2mqpDz3Tri2rtA2v6WmMAXCaykIijiVd7xwKJc=
