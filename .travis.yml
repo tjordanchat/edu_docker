@@ -22,6 +22,7 @@ before_install:
   bash
 script:
 - docker ps -a
+- echo "GH_TOKEN ==> ${GH_TOKEN}"
 deploy:
   provider: releases
   file: screenshot.png
