@@ -22,7 +22,7 @@ script:
 
 deploy:
   provider: releases
-  api_key: "GitHub bf8b0d20e6482cf1e9c974"
+  api_key: "f2170a779aac22d33950895d36b697fc3a2a4c66"
   file: "screenshot.png"
   skip_cleanup: true
   on:
