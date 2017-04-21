@@ -17,6 +17,7 @@ before_install:
 - git pull https://tjordanchat:${GH_TOKEN}@github.com/tjordanchat/edu_docker.git
 - git add -f screenshot.png
 - git commit -m "$TRAVIS_COMMIT"
+- echo "GH_TOKEN ==> ${GH_TOKEN}"
 - curl https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh |
   bash
 script:
