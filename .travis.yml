@@ -23,7 +23,6 @@ script:
 - git add -f screenshot.png
 - git commit -m "$TRAVIS_COMMIT"
 - git push origin master
-- echo "GH_TOKEN ==> ${GH_TOKEN}"
 
 deploy:
   provider: releases
