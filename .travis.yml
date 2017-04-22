@@ -1,15 +1,10 @@
 sudo: required
-
 group: edge
-
 language: ruby
-
 rvm:
 - 2.0.0
-
 services:
 - docker
-
 before_install:
 - export DISPLAY=:1
 - Xvfb :1 -screen 0 1280x960x24 &
@@ -20,7 +15,6 @@ before_install:
 - ls -la
 - curl https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh |
   bash
-  
 script:
 - docker ps -a
 - git status
@@ -28,7 +22,6 @@ script:
 - git add -f screenshot.png
 - git commit -m "$TRAVIS_COMMIT"
 - git push origin master
-
 deploy:
   provider: releases
   file: screenshot.png
@@ -36,7 +29,6 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-    
 env:
   global:
-  - secure: R6WKJ2l5B/NSZDZuimjVkFPRu/VIecRWhFnMaY5uSOlAMZjPDBDsScRM9Nq3ljbgQq6tI4PQwQhQ/RzzVEzuv0S3rElC1UVKz5rFFWcSWDQIUFr+bY5rsM9a5bVjWZ5/+Li90TNh1xjjXOq/jwyq61qNhTRH9aAg60SMC7UVeFtWNFVTBfMcXUglUqOHoDY6eehiHLP6hbtyckrvxQE5ql++vhFWKLqkLSrh7frGH7H8NAI1K9aE+Uo9zTiGV8hWUGHpuHlkVg3F5EcStgiya1t5EvzOYbTEVPwurBaHuAMnNkflLkDX3sZMNOcvNDo0jD/cirIofcN38B1u+zW/o/H0PLwbECXzEDke7/mB4SmrUIREyf1LtKNdgZhR4F87u28juo7TlDyd95HGjG4aFEsa1I1yDeoN5vI3AlaXvHfXBZbRBVHINvErvUJfOUh/spjpKmKkovbrHnx8xa5R0IXnqSaiH+DMHUs5tpGcf5FzCMoMt6xoRZT0bZ054VFVWvvf4KuMuSig5Tv7eYnst6GfcKyliCLTd7M0W9on3vjRlFo26xsj/3hihOvglBkqaF9EDd5QhapCWLiJzJl9KqH0HzMZv71vdAyAptQ8LALBPl4XdfR1oXT2CNRmkvUglGFEH2mqpDz3Tri2rtA2v6WmMAXCaykIijiVd7xwKJc=
+    secure: PaYxn5rJyXTXzrmmhC+BG8zNLgPFM9hfr9P5v9nTj6c71pZ7OcqguN3WptLGq6gqvWv/hhobRDQVDXGUgq1o2IlZD78cd8CmBI/mCZFYcsmvP7qRcL+QFpBHm99f5iM+7CItr6fZJMntp22FCGhNwzR/XsZ0SHPLu9WQDu62fXnWGQYzSfdgL9/ksBg6aZ27Bfj17eF7bUxcs9hcaeRV3D8DXxC99UMvbPKfUj/fUUuWyx2SnQ2PDMJn3hW04AqrKHnhoo654i8OwZBQZq/bDRkfk/+zaWLRLa0QVaP3uSXt1wK097BRhXV1Z8uESPW4S15IrAjLJ+aKYAXLwjyGhpTUIMACEWa09OhPrClT6xoIPJB2ancGMDWlstSUaOIhoL6WdCgQb0IfZPvVv+8KqWi35Yct85dk9oZCxUpCHIIeUrrSo1eiboJgFaFWg9QzN6u7/JtgwsJu3bOtDCwj6+jJ2+OnHK1DWKfbrFer8ufAkh+ejfgEvWa3rH0HU15rOKHidBmknWoO18rvzlZeRygUPU0Yxi7GN63SFKcYVnILWjfud1EjTZuZ3S5mntNBqnu07VfC8+vsGtl5Kx182gAHbWZOyeV0hffw1OLOXQS490yaOt3+JnL3E04FAzuk0QY5mCtEVkS9fPsduLOU6hXHqYbDOJLPVxj+lArEwjI=
