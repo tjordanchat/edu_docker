@@ -21,7 +21,7 @@ script:
 - git pull https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git
 - git add -f screenshot.png
 - git commit -m "$TRAVIS_COMMIT"
-- git push origin master
+
 deploy:
   provider: releases
   file: screenshot.png
