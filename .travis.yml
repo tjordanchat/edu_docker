@@ -24,7 +24,7 @@ before_install:
 script:
 - docker ps -a
 - git status
-- git pull https://tjordanchat:${GH_TOKEN}@github.com/tjordanchat/edu_docker.git
+- git pull https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git
 - git add -f screenshot.png
 - git commit -m "$TRAVIS_COMMIT"
 - git push origin master
