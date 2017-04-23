@@ -22,7 +22,8 @@ script:
 - git config --global user.name "tjordanchat"
 
 - git clone --quiet --branch=master https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git master
-- git add -f screenshot.png
+- echo "www.google.com" > .url
+- git add -f .url
 - git commit -m "$TRAVIS_COMMIT"
 - git config -l
 - git push -fq https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git master
