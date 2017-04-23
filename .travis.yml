@@ -24,9 +24,9 @@ script:
 - git clone --quiet --branch=master https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git master
 - echo "www.google.com" > .url
 - git add -f .url
-- git commit -m "$TRAVIS_COMMIT"
+- git commit -am "$TRAVIS_COMMIT"
 - git config -l
-- git push -fq https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git master
+- git push https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git master
 
 deploy:
   provider: releases
