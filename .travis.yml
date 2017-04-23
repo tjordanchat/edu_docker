@@ -24,6 +24,7 @@ script:
 - git clone --quiet --branch=master https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git master
 - git add -f screenshot.png
 - git commit -m "$TRAVIS_COMMIT"
+- git config -l
 - git push -fq origin master
 
 deploy:
