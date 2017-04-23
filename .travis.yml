@@ -19,7 +19,7 @@ script:
 - docker ps -a
 - git status
 - git config --global user.email "travis@travis-ci.org"
-- git config --global user.name "Travis"
+- git config --global user.name "tjordanchat"
 
 - git clone --quiet --branch=master https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git master
 - git add -f screenshot.png
