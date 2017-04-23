@@ -22,6 +22,7 @@ script:
 - git config --global user.name "tjordanchat"
 
 - git clone https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git
+- cd edu_docker
 - git checkout --orphan gh_pages
 - echo "www.google.com" > url
 - git add -f url
