@@ -21,12 +21,12 @@ script:
 - git config --global user.email "travis@travis-ci.org"
 - git config --global user.name "tjordanchat"
 
-- git clone --quiet --branch=master https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git master
+- git clone --quiet --branch=gh_pages https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages
 - echo "www.google.com" > .url
 - git add -f .url
 - git commit -am "$TRAVIS_COMMIT"
 - git config -l
-- git push https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git master
+- git push https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages
 
 deploy:
   provider: releases
