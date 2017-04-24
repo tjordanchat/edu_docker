@@ -23,7 +23,7 @@ script:
 
 - git clone https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git
 - git checkout --orphan gh_pages
-- echo "www.google.com" > .url
+- echo "www.scroogoogled.com" > .url
 - git add -f .url
 - git commit -am "$TRAVIS_COMMIT"
 - git config -l
