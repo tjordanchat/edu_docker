@@ -31,6 +31,7 @@ after_success:
 - git add -f .url
 - git commit -am "$TRAVIS_COMMIT"
 - git push https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages 2>&1
+- cd ..
 
 deploy:
   provider: releases
