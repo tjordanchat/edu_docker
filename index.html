@@ -4,11 +4,33 @@
 </head>
 <body>
 <script type="text/javascript">
-function httpGet()
+var tid = setInterval(mycode, 2000);
+function mycode() {
+  // do some stuff...
+  // no need to recall the function (it's an interval, it'll loop forever)
+readTextFile("your file path");
+
+}
+function abortTimer() { // to be called when you want to stop the timer
+  clearInterval(tid);
+}
+
+function readTextFile(file)
 {
-   jQuery.get("https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url", function(data) {
-       document.write('testing...');
-       });
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send(null);
 }
 httpGet();
 </script>
