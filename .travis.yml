@@ -21,7 +21,7 @@ script:
 - git config --global user.email "travis@travis-ci.org"
 - git config --global user.name "tjordanchat"
 - git clone https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git
-- git checkout --orphan gh_pages
+- git checkout gh_pages || git checkout --orphan gh_pages
 - cd edu_docker
 - echo "`date`" > .url
 - git add -f .url
