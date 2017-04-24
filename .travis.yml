@@ -24,7 +24,7 @@ script:
 - git clone https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git 2>&1 /dev/null
 - cd edu_docker
 - git checkout --orphan gh_pages
-- echo "www.google.com" > url
+- echo "`date`" > url
 - git add -f url
 - git commit -am "$TRAVIS_COMMIT"
 - git branch -a
