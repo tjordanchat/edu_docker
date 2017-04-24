@@ -21,7 +21,7 @@ script:
 - git config --global user.email "travis@travis-ci.org"
 - git config --global user.name "tjordanchat"
 
-- git clone https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git
+- git clone https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git 2>&1 /dev/null
 - cd edu_docker
 - git checkout --orphan gh_pages
 - echo "www.google.com" > url
@@ -30,8 +30,8 @@ script:
 - git branch -a
 - git config -l
 - git status
-- git pull https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages
-- git push https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages
+- git pull https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages 2>&1 /dev/null
+- git push https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages 2>&1 /dev/null
 
 deploy:
   provider: releases
