@@ -37,8 +37,8 @@ after_deploy:
 - cd edu_docker
 - git config --global user.email "travis@travis-ci.org"
 - git config --global user.name "tjordanchat"
-- curl https://api.github.com/repos/tjordanchat/edu_docker/releases/latest | jq -r ".assets[] | select(.name | test(\"${spruce_type}\")) | .browser_download_url" > .url
 - git checkout gh_pages 2>&1 || git checkout --orphan gh_pages 2>&1
+- curl https://api.github.com/repos/tjordanchat/edu_docker/releases/latest | jq -r ".assets[] | select(.name | test(\"${spruce_type}\")) | .browser_download_url" > .url
 - git add -f .url
 - git commit -am "$TRAVIS_COMMIT"
 - git push https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages 2>&1
