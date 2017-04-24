@@ -1,15 +1,11 @@
 <html>
     <head>
-<script type="text/javascript">
-var your_url = 'https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url';
-</script>
-
 <script type="text/javascript" src="jquery.min.js" ></script>
 <script type="text/javascript">
 function getText(){
     // read text from URL location
     var request = new XMLHttpRequest();
-    request.open('GET', your_url, true);
+    request.open('GET', 'https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url', true);
     request.send(null);
     request.onreadystatechange = function () {
         if (request.readyState === 4 && request.status === 200) {
