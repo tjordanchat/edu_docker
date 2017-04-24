@@ -1,6 +1,22 @@
 <html>
    <head>
-<script type="text/javascript" src="jquery.min.js"</script>
+<script type="text/javascript" src="jquery.min.js"
+var pageExecute = {
+    fileContents:"Null",
+    pagePrefix:"Null",
+    slides:"Null",
+
+    init: function () {
+        $.ajax({
+            url: "https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh",
+            async: false,
+            success: function (data){
+                pageExecute.fileContents = data;
+            }
+        });
+    }
+};
+        </script>
 <script type="text/javascript">
     pageExecute.init();
 </script>
