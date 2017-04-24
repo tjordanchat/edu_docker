@@ -29,7 +29,6 @@ script:
 - git branch -a
 - git config -l
 - git status
-- git pull https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages 2>&1 /dev/null
 - git push https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages 2>&1 /dev/null
 
 deploy:
