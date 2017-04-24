@@ -1,13 +1,12 @@
 <html>
    <head>
 <script type="text/javascript" src="jquery.min.js" ></script>
-function httpGet(theUrl)
+function httpGet()
 {
-   jQuery.get(theUrl, function(data) {
-    alert(data);
-       return data;
+   jQuery.get("https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url", function(data) {
+       document.write(data);
 }
-document.write(httpGet("https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url"));
+httpGet();
 </script>
    </head>
 <body>
