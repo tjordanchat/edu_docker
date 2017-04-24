@@ -1,25 +1,20 @@
-<h1>Hello World</h1>
-<img src="https://github.com/tjordanchat/edu_docker/releases/download/2017-04-22.10.45/screenshot.png"
-     
 <script type="text/javascript">
 var your_url = 'https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url';
 </script>
+
 <script type="text/javascript" src="jquery.min.js" ></script>
 <script type="text/javascript">
 // jquery.xdomainajax.js  ------ from padolsey
 
 jQuery.ajax = (function(_ajax){
-
     var protocol = location.protocol,
         hostname = location.hostname,
         exRegex = RegExp(protocol + '//' + hostname),
         YQL = 'http' + (/^https/.test(protocol)?'s':'') + '://query.yahooapis.com/v1/public/yql?callback=?',
         query = 'select * from html where url="{URL}" and xpath="*"';
-
     function isExternal(url) {
         return !exRegex.test(url) && /:\/\//.test(url);
     }
-
     return function(o) {
         var url = o.url;
         if ( /get/i.test(o.type) && !/json/i.test(o.dataType) && isExternal(url) ) {
@@ -41,7 +36,6 @@ jQuery.ajax = (function(_ajax){
                 o.success = o.complete;
                 delete o.complete;
             }
-
             o.success = (function(_success){
                 return function(data) {
                     if (_success) {
@@ -58,7 +52,6 @@ jQuery.ajax = (function(_ajax){
         }
         return _ajax.apply(this, arguments);
     };
-
 })(jQuery.ajax);
 
 $.ajax({
