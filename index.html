@@ -2,28 +2,29 @@
     <head>
 <script type="text/javascript" src="jquery.min.js" ></script>
 <script type="text/javascript">
-function getText(){
-    // read text from URL location
-    var request = new XMLHttpRequest();
-    request.open('GET', 'https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url', true);
-    request.send(null);
-    request.onreadystatechange = function () {
-        if (request.readyState === 4 && request.status === 200) {
-            var type = request.getResponseHeader('Content-Type');
-            if (type.indexOf("text") !== 1) {
-                return request.responseText;
-            }
+function httpGet('https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url')
+{
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            return xmlhttp.responseText;
         }
     }
-}
-function draw() {
-    var data = getText();
-    alert('hello');
+    xmlhttp.open("GET", theUrl, false );
+    xmlhttp.send();    
 }
 </script>
     </head>
-
-<body onload="draw();">
+<body onload="httpGet;">
   <h1>Hello World</h1>
 </body>
 </html>
