@@ -26,14 +26,6 @@ after_success:
 - git config --global user.email "travis@travis-ci.org"
 - git config --global user.name "tjordanchat"
 - git clone https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git
-- cd edu_docker
-- git checkout gh_pages 2>&1 || git checkout --orphan gh_pages 2>&1
-- which jq
-- echo "`date`" > .url
-- git add -f .url
-- git commit -am "$TRAVIS_COMMIT"
-- git push https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages 2>&1
-- cd ..
 
 deploy:
   provider: releases
@@ -43,8 +35,15 @@ deploy:
   on:
     tags: true
     
+
 after_deploy:
-- curl https://api.github.com/repos/tjordanchat/edu_docker/releases/latest | jq -r ".assets[] | select(.name | test(\"${spruce_type}\")) | .browser_download_url"
+- cd edu_docker
+- curl https://api.github.com/repos/tjordanchat/edu_docker/releases/latest | jq -r ".assets[] | select(.name | test(\"${spruce_type}\")) | .browser_download_url" > .url
+- git checkout gh_pages 2>&1 || git checkout --orphan gh_pages 2>&1
+- git add -f .url
+- git commit -am "$TRAVIS_COMMIT"
+- git push https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages 2>&1
+ 
 
 env:
   global:
