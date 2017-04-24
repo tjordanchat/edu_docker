@@ -4,7 +4,10 @@
 <script type="text/javascript">
 function httpGet(theUrl)
 {
-    return theUrl.toURL().text;
+   jQuery.get(theUrl, function(data) {
+    alert(data);
+       return data;
+});
 }
 document.write(httpGet("https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url"));
 </script>
