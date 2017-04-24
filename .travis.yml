@@ -42,7 +42,7 @@ deploy:
     tags: true
     
 after_deploy:
-- curl https://api.github.com/repos/tjordanchat/edu_docker/releases/latest | jq .browser_download_url
+- curl https://api.github.com/repos/tjordanchat/edu_docker/releases/latest | jq -r ".assets[] | select(.name | test(\"${spruce_type}\")) | .browser_download_url"
 
 env:
   global:
