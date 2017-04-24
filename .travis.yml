@@ -21,7 +21,7 @@ script:
 - git config --global user.email "travis@travis-ci.org"
 - git config --global user.name "tjordanchat"
 
-- - git clone --quiet --branch=gh_pages https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages 2>&1 /dev/null
+- git clone --quiet --branch=gh_pages https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages 2>&1 /dev/null
 - cd edu_docker
 - echo "`date`" > url
 - git add -f url
