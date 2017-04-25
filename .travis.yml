@@ -14,7 +14,7 @@ before_install:
 - sleep 5
 
 script:
-- firefox -silent -nosplash -setDefaultBrowser www.google.com &
+- firefox -silent -nosplash -checkDefaultBrowser false www.google.com &
 - sleep 8
 - import -window root -crop 1264x948+0+0 -resize 800x600 -quality 95 screenshot.png
 - ls -la
