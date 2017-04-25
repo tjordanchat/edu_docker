@@ -6,18 +6,17 @@ https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"</script>
       <script type="text/javascript">
 var url = "https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url";
-function Start ()
-{
-    // Start a download of the given URL
-    var www : WWW = new WWW (url);
- 
-    // Wait for download to complete
-    yield www;
- 
-    // assign texture
-    var text : string = www.text;
-    document.write(text);
+var txtFile = new XMLHttpRequest();
+txtFile.open("GET", url, true);
+txtFile.onreadystatechange = function() {
+  if (txtFile.readyState === 4) {  // Makes sure the document is ready to parse.
+    if (txtFile.status === 200) {  // Makes sure it's found the file.
+      allText = txtFile.responseText; 
+      lines = txtFile.responseText.split("\n"); // Will separate each line into an array
+    }
+  }
 }
+txtFile.send(null);
       </script>
    </head>
 
