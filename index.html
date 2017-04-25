@@ -6,22 +6,35 @@ https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"</script>
       <script type="text/javascript">
 var url = "https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url";
-var txtFile = new XMLHttpRequest();
-txtFile.open("GET", url, true);
-txtFile.onreadystatechange = function() {
-  if (txtFile.readyState === 4) {  // Makes sure the document is ready to parse.
-    if (txtFile.status === 200) {  // Makes sure it's found the file.
-      allText = txtFile.responseText; 
-      document.write(allText);
-      lines = txtFile.responseText.split("\n"); // Will separate each line into an array
-    }
-  }
-}
-txtFile.send(null);
+var getJSON = function(url) {
+  return new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status == 200) {
+        resolve(xhr.response);
+      } else {
+        reject(status);
+      }
+    };
+    xhr.send();
+  });
+};
+
+getJSON(url).then(function(data) {
+    alert('Your Json result is:  ' + data.result); //you can comment this, i used it to debug
+    
+    result.innerText = data.result; //display the result in an HTML element
+}, function(status) { //error detection....
+  alert('Something went wrong.');
+});
       </script>
    </head>
 
 <body>
+   <div id="result" style="color:red"></div>
   <h1>Hello World</h1>
       </body>
 </html>
