@@ -1,28 +1,27 @@
 <html>
    <head>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"
-var pageExecute = {
-    fileContents:"Null",
-    pagePrefix:"Null",
-    slides:"Null",
+<!--
+https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url
+-->
+      <script type="text/javascript">
+var url = "https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url";
+function Start ()
+{
+    // Start a download of the given URL
+    var www : WWW = new WWW (url);
+ 
+    // Wait for download to complete
+    yield www;
+ 
+    // assign texture
+    var text : string = www.text;
+    var lines : string[] = text.Split("\n"[0]);
+}
+      </script>
+   </head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"</script>
 
-    init: function () {
-        $.ajax({
-            url: "https://raw.githubusercontent.com/tjordanchat/edu_docker/gh_pages/.url",
-            async: false,
-            success: function (data){
-                pageExecute.fileContents = data;
-            });
-        }
-    }
-};
-        </script>
-<script type="text/javascript">
-    pageExecute.init();
-</script>
-</head>
-<body>
-<script type="text/javascript"> alert(pageExecute.fileContents); </script>
+<body onLoad="Start()">
   <h1>Hello World</h1>
-</body>
+      </body>
 </html>
