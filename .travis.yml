@@ -16,7 +16,6 @@ before_install:
 - sudo apt-get install texlive-full  
 
 script:
-- which textify
 - docker build -t wkoszek/docker_edu .
 - docker run -d -p 80:80 wkoszek/docker_edu
 - sleep 15
