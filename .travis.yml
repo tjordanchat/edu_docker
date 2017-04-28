@@ -12,7 +12,6 @@ before_install:
 - export DISPLAY=:1
 - Xvfb :1 -screen 0 1280x960x24 &
 - sleep 5
-- which texify
 - sudo apt-get install texlive-full  
 
 script:
