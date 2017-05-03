@@ -21,7 +21,7 @@ script:
 - docker run -d -p 80:80 wkoszek/docker_edu
 - sleep 15
 - netstat -tunpl
-- chromium --no-default-browser-check www.google.com &
+- chromium-browser --no-default-browser-check www.google.com &
 - sleep 8
 - import -window root -crop 1264x948+0+0 -resize 800x600 -quality 95 screenshot.png
 - ls -la
