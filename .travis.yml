@@ -15,6 +15,7 @@ before_install:
 # - sudo apt-get install texlive-full  
 
 script:
+- ls -l /usr/lib/firefox*
 - docker build -t wkoszek/docker_edu .
 - docker run -d -p 80:80 wkoszek/docker_edu
 - sleep 15
@@ -25,7 +26,6 @@ script:
 - ls -la
 - curl https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh |
   bash
-- find / -name mozilla.cfg 2>/dev/null
   
 after_success:
 - docker ps -a
