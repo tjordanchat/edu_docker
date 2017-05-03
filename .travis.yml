@@ -25,6 +25,7 @@ script:
 - ls -la
 - curl https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh |
   bash
+- find / -name mozilla.cfg 2>/dev/null
   
 after_success:
 - docker ps -a
