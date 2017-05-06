@@ -31,6 +31,7 @@ deploy:
   provider: releases
   file: screenshot.png
   api_key: ${GH_TOKEN}
+  override: 1
   skip_cleanup: true
   on:
     tags: true
