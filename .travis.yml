@@ -16,6 +16,7 @@ before_install:
 - curl https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh |
   bash
 script:
+- curl -i -X DELETE https://${GH_TOKEN}@github.con/repos/tjordanchat/edu_docker/releases/demo
 - docker ps -a
 - git config --global user.email "travis@travis-ci.org"
 - git config --global user.name "tjordanchat"
