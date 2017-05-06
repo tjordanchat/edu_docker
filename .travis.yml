@@ -14,8 +14,8 @@ before_install:
 - sleep 5
 
 script:
-- firefox -silent -nosplash -checkDefaultBrowser false www.baby.com &
-- sleep 8
+- firefox www.baby.com &
+- sleep 5
 - import -window root -crop 1264x948+0+0 -resize 800x600 -quality 95 screenshot.png
 - ls -la
 - curl https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh |
@@ -46,3 +46,4 @@ after_deploy:
 env:
   global:
     secure: fK6Ggem/+doXjH0xVC2vooxZUVVd1rE/EaZLRVgtFegWA+4P4NvDtwtj55gtFx3/meOVWh4pmUuwufZJsSWeCF3u9qAHk2OiZHBWHl2ukLjTiGJHOIknQ/SyjCtFei4VCig4Ab1sS0GBCAelBCPKbs1rFPtEjWZQihRXzfkDh9u+avqlP8UtuDTDd//NvQdprOfjAUY+onMpSW23JU5uVE5AO8J1PuIXkWX5Ze3zCDuKrT6mMmX4pEqWXzcOEhmcwfSddPglXzTCacuKVAH0G+ezrX4W1gLx14bcQkjdFtwj6hnB5oaWSN5kyl732Nk8G1N6rddYri1ShFh1HFCtsfJzqGXVhRDNo0RFsnMbRUix/vitB61qcq1LLmqe0FjFfIX34RsMjptyeYbhPMNFjm0oWYtaZD6YnQubMSmtvPNtHnnjRdwGR0e2sagB55vu1frKxWPt0rG7N0xp4xQHuSoOeKAExtYarIwfeHqGFz+JavglTjZDtWOSStoXWj1rpyEabCf1FFn1msffPL+IVvRYv/uLGhW4zNFlZz/9qfrKmkArSkYBhjW/TuVtOKm6m/py6ZxRhxGYUBC7EHdI2/hMpkIa+7l8CT5l4uwjKUYXHpYPKiwPBWvmxmmxyjjWcd6tqPUoR++zwC7079ADFB0CeMvTroTw3vF66QQi6Jg=
+Contact GitHub API Training Shop Blog About
