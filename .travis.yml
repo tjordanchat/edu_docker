@@ -19,22 +19,10 @@ script:
 - docker ps -a
 - git config --global user.email "travis@travis-ci.org"
 - git config --global user.name "tjordanchat"
-#- git clone https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git
-#- cd edu_docker
-#- git checkout gh_pages 2>&1 || git checkout --orphan gh_pages 2>&1
-#- echo "`date`" > .url
-#- git add -f .url
-#- git commit -am "$TRAVIS_COMMIT"
-#- git push https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages 2>&1
-
 deploy:
   provider: releases
-  file: screenshot.png
-  api_key: ${GH_TOKEN}
-  override: 1
-  skip_cleanup: true
+  api_key:
+    secure: meZdjxrtA0QpKcdg2lJkBD6jG96X4hVI5oWtXypvFlVqByI6Mq84DHxqtRnOzyD0LDExnHT3y23jq+TLjrdIqMKGXIlNoxndEX2njGeYyMzIFaP4tpj5MCnZgtxUz5ObDOZqB0Im6Pn8xHllOE7/7wf9EQrXMnKTThZ1y1tXW4cLsQwuvz+bikiK1nizrCwlHiM5IVlNOw6zLaEaya+7grcjPoWDlICqD2+4VY/aVA51UvvpoinXYiDHVduN1a3lU8Cs6izscnyTlzAuvw1ilr5YK3yTWcTiR2DiuamChD9joXy1Z+AeyV+gwts+FWMjA7eVlKwLOTkQbPmiM5Y6aI2L7s8a7JScnJ9r23KgUv7GdI7BuDxI+6Cadug+md01GCDrMOxSgxAIc7P7Ea/T3ANptWoLL7+JP1Ea/9RedZHABbsBrdTdGUFqwDCf7cK81MpLsLyotXj9KAAvD+2EkfwfHbnJ13lcMdg9ebKjeISdRsKOrUSQmAHBcIikmbARIXSb8FeJnit95PFF6W5ZVHmVK3QTWqjrsqjkpSwgBjf2kVnIaXAFV7vIZySWg6Gu9ab7/7egR+84Pqp57bRpLFlTTdeblnAbhE19AeiiaC0+2BP5IuKF8XP8o+JLR6qfBRKZxKxTgrNmo9lg3wjpS17BHQJRbPrcN7Awk645H0M=
+  file: screenshop.png
   on:
-    tags: true
-env:
-  global:
-    secure: fK6Ggem/+doXjH0xVC2vooxZUVVd1rE/EaZLRVgtFegWA+4P4NvDtwtj55gtFx3/meOVWh4pmUuwufZJsSWeCF3u9qAHk2OiZHBWHl2ukLjTiGJHOIknQ/SyjCtFei4VCig4Ab1sS0GBCAelBCPKbs1rFPtEjWZQihRXzfkDh9u+avqlP8UtuDTDd//NvQdprOfjAUY+onMpSW23JU5uVE5AO8J1PuIXkWX5Ze3zCDuKrT6mMmX4pEqWXzcOEhmcwfSddPglXzTCacuKVAH0G+ezrX4W1gLx14bcQkjdFtwj6hnB5oaWSN5kyl732Nk8G1N6rddYri1ShFh1HFCtsfJzqGXVhRDNo0RFsnMbRUix/vitB61qcq1LLmqe0FjFfIX34RsMjptyeYbhPMNFjm0oWYtaZD6YnQubMSmtvPNtHnnjRdwGR0e2sagB55vu1frKxWPt0rG7N0xp4xQHuSoOeKAExtYarIwfeHqGFz+JavglTjZDtWOSStoXWj1rpyEabCf1FFn1msffPL+IVvRYv/uLGhW4zNFlZz/9qfrKmkArSkYBhjW/TuVtOKm6m/py6ZxRhxGYUBC7EHdI2/hMpkIa+7l8CT5l4uwjKUYXHpYPKiwPBWvmxmmxyjjWcd6tqPUoR++zwC7079ADFB0CeMvTroTw3vF66QQi6Jg=
+    repo: tjordanchat/edu_docker
