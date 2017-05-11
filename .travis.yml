@@ -16,17 +16,16 @@ before_install:
 - curl https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh |
   bash
 script:
-- curl -i -X DELETE https://${GH_TOKEN}@github.con/repos/tjordanchat/edu_docker/releases/demo
 - docker ps -a
 - git config --global user.email "travis@travis-ci.org"
 - git config --global user.name "tjordanchat"
-- git clone https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git
-- cd edu_docker
-- git checkout gh_pages 2>&1 || git checkout --orphan gh_pages 2>&1
-- echo "`date`" > .url
-- git add -f .url
-- git commit -am "$TRAVIS_COMMIT"
-- git push https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages 2>&1
+#- git clone https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git
+#- cd edu_docker
+#- git checkout gh_pages 2>&1 || git checkout --orphan gh_pages 2>&1
+#- echo "`date`" > .url
+#- git add -f .url
+#- git commit -am "$TRAVIS_COMMIT"
+#- git push https://${GH_TOKEN}@github.com/tjordanchat/edu_docker.git gh_pages 2>&1
 
 deploy:
   provider: releases
