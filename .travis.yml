@@ -16,8 +16,6 @@ script:
 - sleep 5
 - import -window root -crop 1264x948+0+0 -resize 800x600 -quality 95 screenshot.png
 - ls -la
-- curl https://raw.githubusercontent.com/tjordanchat/edu_docker/master/build.sh |
-  bash
 
 deploy:
   provider: releases
