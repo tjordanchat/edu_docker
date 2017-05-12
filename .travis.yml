@@ -16,6 +16,8 @@ script:
 - sleep 5
 - import -window root -crop 1264x948+0+0 -resize 800x600 -quality 95 screenshot.png
 - ls -la
+- npm install --global github-remove-all-releases
+- github-remove-all-releases --help
 
 deploy:
   provider: releases
