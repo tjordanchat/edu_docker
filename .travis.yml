@@ -20,11 +20,9 @@ script:
 deploy:
   provider: releases
   skip_cleanup: true
-  branches:
-     only:
-     - master
   api_key:
     secure: meZdjxrtA0QpKcdg2lJkBD6jG96X4hVI5oWtXypvFlVqByI6Mq84DHxqtRnOzyD0LDExnHT3y23jq+TLjrdIqMKGXIlNoxndEX2njGeYyMzIFaP4tpj5MCnZgtxUz5ObDOZqB0Im6Pn8xHllOE7/7wf9EQrXMnKTThZ1y1tXW4cLsQwuvz+bikiK1nizrCwlHiM5IVlNOw6zLaEaya+7grcjPoWDlICqD2+4VY/aVA51UvvpoinXYiDHVduN1a3lU8Cs6izscnyTlzAuvw1ilr5YK3yTWcTiR2DiuamChD9joXy1Z+AeyV+gwts+FWMjA7eVlKwLOTkQbPmiM5Y6aI2L7s8a7JScnJ9r23KgUv7GdI7BuDxI+6Cadug+md01GCDrMOxSgxAIc7P7Ea/T3ANptWoLL7+JP1Ea/9RedZHABbsBrdTdGUFqwDCf7cK81MpLsLyotXj9KAAvD+2EkfwfHbnJ13lcMdg9ebKjeISdRsKOrUSQmAHBcIikmbARIXSb8FeJnit95PFF6W5ZVHmVK3QTWqjrsqjkpSwgBjf2kVnIaXAFV7vIZySWg6Gu9ab7/7egR+84Pqp57bRpLFlTTdeblnAbhE19AeiiaC0+2BP5IuKF8XP8o+JLR6qfBRKZxKxTgrNmo9lg3wjpS17BHQJRbPrcN7Awk645H0M=
   file: screenshot.png
   on:
     repo: tjordanchat/edu_docker
+    all_branches: true
