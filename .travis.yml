@@ -18,6 +18,7 @@ script:
 - ls -la
 - npm install --global github-remove-all-releases
 - github-remove-all-releases --help
+- github-remove-all-releases tjordanchat edu_docker -t ${GH_TOKEN}
 
 deploy:
   provider: releases
