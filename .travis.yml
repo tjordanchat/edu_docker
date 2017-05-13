@@ -19,6 +19,7 @@ script:
 - sleep 5
 - import -window root -crop 1264x948+0+0 -resize 800x600 -quality 95 screenshot.png
 - ls -la
+#- curl --data '{"tag_name": "v1.0.0","target_commitish": "master","name": "v1.0.0","body": "Release of version 1.0.0","draft": false,"prerelease": false}' https://api.github.com/repos/:owner/:repository/releases?access_token=:your_access_token
 - npm install --global github-remove-all-releases
 - github-remove-all-releases --help
 - github-remove-all-releases tjordanchat edu_docker -t ${GH_TOKEN}
