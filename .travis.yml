@@ -3,6 +3,9 @@ sudo: required
 group: edge
 language: go
 
+go:
+- master
+
 services:
 - docker
 
