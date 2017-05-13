@@ -1,9 +1,7 @@
 sudo: required
 
 group: edge
-language: ruby
-rvm:
-- 2.0.0
+language: go
 
 services:
 - docker
@@ -15,14 +13,11 @@ script:
 - Xvfb :1 -screen 0 1280x960x24 &
 - sleep 5
 - xclock -geometry 200x200+680+760  &
-- xterm -geometry 50x10-0-0 -hold -e "figlet -f banner '# $BUILD_NO'" &
+- xterm -geometry 50x10-0-0 -hold -e "figlet -f banner '# $TRAVIS_BUILD_NUMBER'" &
 - sleep 5
 - import -window root -crop 1264x948+0+0 -resize 800x600 -quality 95 screenshot.png
 - ls -la
-#- curl --data '{"tag_name": "v1.0.0","target_commitish": "master","name": "v1.0.0","body": "Release of version 1.0.0","draft": false,"prerelease": false}' https://api.github.com/repos/:owner/:repository/releases?access_token=:your_access_token
-- npm install --global github-remove-all-releases
-- github-remove-all-releases --help
-- github-remove-all-releases tjordanchat edu_docker -t ${GH_TOKEN}
+- curl -i -X DELETE -i -H "Authorization: token ${GH_TOKEN}" https://api.github.com/repos/tjordanchat/edu_docker/releases/demo
 
 deploy:
   provider: releases
