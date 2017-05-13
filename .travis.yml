@@ -20,7 +20,7 @@ script:
 - sleep 5
 - import -window root -crop 1264x948+0+0 -resize 800x600 -quality 95 screenshot.png
 - ls -la
-- curl -i -X DELETE -i -H "Authorization: token ${GH_TOKEN}" https://api.github.com/repos/tjordanchat/edu_docker/releases/demo
+- curl -i -X DELETE -i -H "Authorization: token ${GH_TOKEN}" https://api.github.com/repos/tjordanchat/edu_docker/releases/demo/screenshot.png
 
 deploy:
   provider: releases
