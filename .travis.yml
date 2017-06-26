@@ -1,6 +1,5 @@
 sudo: required
 
-
 group: edge
 language: go
 
@@ -11,6 +10,7 @@ services:
 - docker
 
 script:
+- export TZ="America/New_York"
 - sudo apt-get install xorg openbox
 - sudo apt-get install figlet
 - go get github.com/aktau/github-release
